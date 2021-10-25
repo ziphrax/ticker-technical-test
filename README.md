@@ -1,1 +1,45 @@
 # ticker-technical-test
+
+Scenario 1:
+FRFRFFFFFFFLLLLFFFFFRFFFFLFFLRRF
+FFFFFFFFFFFFFFFFFFFFF = 21
+RRRRRRR = 7 
+LLLLLL = 6
+
+-1, 21
+
+
+Scenario 2:
+FFFFFFFFRRRRRRRFFFFLLLBBRRRRRLLLLLLLLLRFFF
+
+FFFFFFFFFFFFFFF = 15
+RRRRRRRRRRRRR = 13
+LLLLLLLLLLLL = 12
+BB = 2
+
+-1,13
++3, +6
+2, 18
+
+Scenario 3:
+RRRRRRRRFFFFFFFFFFFLLLBBBBBRRRLLLLLFFLR
+RRRRRRRRRRRR = 12
+FFFFFFFFFFFFF = 13
+LLLLLLLLL = 9
+BBBBB = 5
+
+3,8
++0, +7
+0, 15
+
+
+
+
+
+
+
+
+## Assumptions
+
+1. Initial direction is always up, therefore, F = Y + 1, B = Y - 1, R = X + 1, L = X - 1;
+
