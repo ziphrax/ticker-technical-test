@@ -61,9 +61,6 @@ export class ArachnidBotMk2 extends ArachnidBot {
             }
 
             if(this.checkInBounds(newPoint)) point = newPoint;
-
-            console.log(`${instructions[index]}=>, point : {${point.x}:${point.y}}, orientation: ${orientation}`);
-            console.log(newPoint);
         }
 
         return point;
@@ -76,8 +73,6 @@ export class ArachnidBotMk2 extends ArachnidBot {
         return true;
     }
 
-    // answer from https://stackoverflow.com/questions/17410809/how-to-calculate-rotation-in-2d-in-javascript
-    // adapted to
     rotate(orientation: Orientation, direction:Direction): Orientation{
         if(orientation === "UP" && direction === "R") return "RIGHT";
         if(orientation === "UP" && direction === "L") return "LEFT";

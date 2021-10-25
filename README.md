@@ -83,3 +83,10 @@ FFB,
 
 1. Origin cannot be negative on either axis
 2. Turning around to face the way we are going also moves.
+
+## Mk3
+
+### Assumptions
+
+1. Overheating only stops at the current instruction, a 2nd instruction resets the heat
+2. All movement uses fuel
