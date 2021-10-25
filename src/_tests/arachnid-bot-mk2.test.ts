@@ -50,6 +50,16 @@ describe("Arachnid Bot: Mk 2",()=>{
         expect(actual).to.deep.equal(expected);
     });
 
+    it("Given scenario 5: resolve(0, 0, FFB ) returns (0, 1)",() => {
+        const bot = new ArachnidBotMk2();
+        
+        const expected: Point = {x: 0, y: 1};
+        
+        const actual = bot.resolve(0, 0, "FFB");
+
+        expect(actual).to.deep.equal(expected);
+    });
+
     describe("CheckInBounds",()=>{
         let bot: ArachnidBotMk2;
 

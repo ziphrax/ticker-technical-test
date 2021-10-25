@@ -16,7 +16,7 @@ export class ArachnidBotMk2 extends ArachnidBot {
             switch(instructions[index]){
                 case "F":
                     switch(orientation){
-                        case "UP":                            
+                        case "UP":           
                             newPoint = utils.addPoint(point, {x:0, y:1});
                             break;
                         case "DOWN":
@@ -33,15 +33,19 @@ export class ArachnidBotMk2 extends ArachnidBot {
                 case "B":
                     switch(orientation){
                         case "UP":
+                            orientation = "DOWN";  
                             newPoint = utils.addPoint(point, {x:0, y:-1});
                             break;
-                        case "DOWN":
+                        case "DOWN":                            
+                            orientation = "UP";
                             newPoint = utils.addPoint(point, {x:0, y:1});
                             break;
-                        case "LEFT":
+                        case "LEFT":                            
+                            orientation = "RIGHT";
                             newPoint = utils.addPoint(point, {x:1, y:0});
                             break;
-                        case "RIGHT":
+                        case "RIGHT":                            
+                            orientation = "LEFT";
                             newPoint = utils.addPoint(point, {x:-1, y:0});
                             break;
                     }

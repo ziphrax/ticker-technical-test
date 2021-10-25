@@ -48,3 +48,4 @@ FRFRFFFFFFFLLLLFFFFFRFFFFLFFLRRF
 ### Assumptions
 
 1. Origin cannot be negative on either axis
+2. Turning around to face the way we are going also moves.
