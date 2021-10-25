@@ -19,4 +19,38 @@ describe("Arachnid Bot: Mk 2",()=>{
 
         expect(actual).to.deep.equal(expected);
     });
+
+    describe("CheckInBounds",()=>{
+        let bot: ArachnidBotMk2;
+
+        beforeEach(()=>{
+            bot = new ArachnidBotMk2();
+        });
+
+        it("CheckInBounds Given Point (0, 0) returns true",()=>{
+            const actual = bot.checkInBounds({x: 0, y: 0});
+            expect(actual).to.be.true;
+        });
+
+        it("CheckInBounds Given Point (-1, 0) returns false",()=>{
+            const actual = bot.checkInBounds({x: -1, y: 0});
+            expect(actual).to.be.false;
+        });
+
+        it("CheckInBounds Given Point (0, -1) returns false",()=>{
+            const actual = bot.checkInBounds({x: 0, y: -1});
+            expect(actual).to.be.false;
+        });
+
+        it("CheckInBounds Given Point (-1, -1) returns false",()=>{
+            const actual = bot.checkInBounds({x: -1, y: -1});
+            expect(actual).to.be.false;
+        });
+
+        it("CheckInBounds Given Point (1, 1) returns true",()=>{
+            const actual = bot.checkInBounds({x: 1, y: 1});
+            expect(actual).to.be.true;
+        });
+    });
+
 });
