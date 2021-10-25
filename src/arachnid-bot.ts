@@ -1,7 +1,4 @@
-export interface Point {
-    x: number;
-    y: number;
-}
+import { Point } from "./point";
 
 export class ArachnidBot {    
     resolve(x: number, y: number, instructions: string ): Point{

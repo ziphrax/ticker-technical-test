@@ -1,7 +1,7 @@
 import { describe } from 'mocha';
 import { expect } from 'chai';
 
-import { Point } from '../arachnid-bot';
+import { Point } from '../point';
 import { ArachnidBotMk2 } from '../arachnid-bot-mk2';
 
 describe("Arachnid Bot: Mk 2",()=>{

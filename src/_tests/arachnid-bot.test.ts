@@ -1,7 +1,8 @@
 import { describe } from 'mocha';
 import { expect } from 'chai';
 
-import { ArachnidBot, Point } from '../arachnid-bot';
+import { ArachnidBot } from '../arachnid-bot';
+import { Point } from '../point';
 
 describe("Arachnid Bot: Mk 1",()=>{
     it("when instantiated is not null", ()=>{
