@@ -1,4 +1,18 @@
 # ticker-technical-test
+
+command line args
+
+npm start x y FFFLLLBBB [mk1 | mk2]
+
+Example:
+
+```
+
+npm start 0 0 FFFLLLBBB mk1
+
+
+npm start 4 2 FFFLLLBBB mk2
+```
 ## MK 1
 
 Scenario 1:
@@ -41,9 +55,29 @@ BBBBB = 5
 ## Mk2
 
 Scenario 1:
-FRFRFFFFFFFLLLLFFFFFRFFFFLFFLRRF
+Diagonal right
+FFFRFFF
+3,3
+
+Scenario 2:
+return to 0
+FFFFRRFFFF
 0,0
 
+Scenario 3:
+dont go beyond boundry
+LFFRFF
+0,0
+
+Scenario 4:
+dont go beyond boundry
+LFFRFFLLFF,
+0,0
+
+Scenario 5:
+2 steps forwards, 1 step back
+FFB,
+0,1
 
 ### Assumptions
 
