@@ -5,6 +5,11 @@ export interface Point {
 
 export class ArachnidBot {
     resolve(x: number, y: number, instructions: string ): Point{
-        return {x: 0, y: 0};
+        let point: Point = {x, y};
+
+        point.x = point.x + (instructions.match(/R/g) || []).length - (instructions.match(/L/g) || []).length;
+        point.y = point.y + (instructions.match(/F/g) || []).length - (instructions.match(/B/g) || []).length;
+
+        return point;
     }
 }
