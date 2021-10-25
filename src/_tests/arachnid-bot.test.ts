@@ -3,7 +3,7 @@ import { expect } from 'chai';
 
 import { ArachnidBot, Point } from '../arachnid-bot';
 
-describe("Movement Manager",()=>{
+describe("Arachnid Bot",()=>{
     it("when instantiated is not null", ()=>{
         const bot = new ArachnidBot();
         expect(bot).to.not.be.null;
