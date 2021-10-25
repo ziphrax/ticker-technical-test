@@ -2,27 +2,64 @@ import { ArachnidBot } from "./arachnid-bot";
 import { Point } from "./point";
 import * as utils from './utils';
 
+export type Orientation = "UP" | "DOWN" | "LEFT" | "RIGHT";
+export type Direction = "L" | "R";
+
 export class ArachnidBotMk2 extends ArachnidBot {
     resolve(x: number, y: number, instructions: string): Point {
         let point: Point = { x, y };
-        let nextMove: Point = {x: 0 ,y: 1}; // based of assumption initial direction is up.
+        let orientation: Orientation  = "UP"; // based of assumption initial direction is up.
 
         for(let index = 0; index < instructions.length; index++){
+            let newPoint: Point = point;
+
             switch(instructions[index]){
                 case "F":
-                    if(this.checkInBounds(utils.addPoint(point,nextMove))){
-                        point = utils.addPoint(point, nextMove)
+                    switch(orientation){
+                        case "UP":                            
+                            newPoint = utils.addPoint(point, {x:0, y:1});
+                            break;
+                        case "DOWN":
+                            newPoint = utils.addPoint(point, {x:0, y:-1});
+                            break;
+                        case "LEFT":
+                            newPoint = utils.addPoint(point, {x:-1, y:0});
+                            break;
+                        case "RIGHT":
+                            newPoint = utils.addPoint(point, {x:1, y:0});
+                            break;
                     }
+                    break;
                 case "B":
-                    if(this.checkInBounds(utils.addPoint(point,nextMove))){
-                        point = utils.subtractPoint(point, nextMove)
+                    switch(orientation){
+                        case "UP":
+                            newPoint = utils.addPoint(point, {x:0, y:-1});
+                            break;
+                        case "DOWN":
+                            newPoint = utils.addPoint(point, {x:0, y:1});
+                            break;
+                        case "LEFT":
+                            newPoint = utils.addPoint(point, {x:1, y:0});
+                            break;
+                        case "RIGHT":
+                            newPoint = utils.addPoint(point, {x:-1, y:0});
+                            break;
                     }
+                    break;
                 case "L":
+                    orientation = this.rotate(orientation, "L");
+                    break;
                 case "R":
+                    orientation = this.rotate(orientation, "R");
                     break;
                 default:
                     console.error(`Invalid command: ${instructions[index]}`);
             }
+
+            if(this.checkInBounds(newPoint)) point = newPoint;
+
+            console.log(`${instructions[index]}=>, point : {${point.x}:${point.y}}, orientation: ${orientation}`);
+            console.log(newPoint);
         }
 
         return point;
@@ -37,13 +74,15 @@ export class ArachnidBotMk2 extends ArachnidBot {
 
     // answer from https://stackoverflow.com/questions/17410809/how-to-calculate-rotation-in-2d-in-javascript
     // adapted to
-    rotate(point:Point, angle: number){
-        let radians = (Math.PI / 180) * angle,
-        cos = Math.cos(radians),
-        sin = Math.sin(radians),
-        nx = (cos * (point.x - point.x)) + (sin * (point.y - point.y)) + point.x,
-        ny = (cos * (point.y - point.y)) - (sin * (point.x- point.x)) + point.y;
-    
-        return {x: nx, y: ny};
+    rotate(orientation: Orientation, direction:Direction): Orientation{
+        if(orientation === "UP" && direction === "R") return "RIGHT";
+        if(orientation === "UP" && direction === "L") return "LEFT";
+        if(orientation === "DOWN" && direction === "R") return "LEFT";
+        if(orientation === "DOWN" && direction === "L") return "RIGHT";
+        if(orientation === "LEFT" && direction === "R") return "UP";
+        if(orientation === "LEFT" && direction === "L") return "DOWN";
+        if(orientation === "RIGHT" && direction === "R") return "DOWN";
+        
+        return "UP";
     }
 }
