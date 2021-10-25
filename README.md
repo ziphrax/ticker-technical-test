@@ -2,7 +2,7 @@
 
 command line args
 
-npm start x y FFFLLLBBB [mk1 | mk2]
+npm start x y FFFLLLBBB [mk1 | mk2 | mk3]
 
 Example:
 

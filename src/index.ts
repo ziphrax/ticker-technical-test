@@ -20,7 +20,7 @@ if(args.length === 6){
     console.log("Bot position should be");
     console.log(JSON.stringify(result));
 } else {
-    console.error("Invalid params passed in. Try npm start 0 0 FFF [mk1 | mk2]");
+    console.error("Invalid params passed in. Try npm start 0 0 FFF [mk1 | mk2 | mk3]");
     process.exit(1);
 }
 
