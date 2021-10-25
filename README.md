@@ -1,4 +1,5 @@
 # ticker-technical-test
+## MK 1
 
 Scenario 1:
 FRFRFFFFFFFLLLLFFFFFRFFFFLFFLRRF
@@ -33,13 +34,17 @@ BBBBB = 5
 3, 15
 
 
-
-
-
-
-
-
-## Assumptions
+### Assumptions
 
 1. Initial direction is always up, therefore, F = Y + 1, B = Y - 1, R = X + 1, L = X - 1;
 
+## Mk2
+
+Scenario 1:
+FRFRFFFFFFFLLLLFFFFFRFFFFLFFLRRF
+0,0
+
+
+### Assumptions
+
+1. Origin cannot be negative on either axis

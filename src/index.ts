@@ -1,8 +1,5 @@
 import {ArachnidBot} from './arachnid-bot';
 
-
-
-
 const args = process.argv;
 
 if(args.length === 5){

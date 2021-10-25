@@ -3,7 +3,7 @@ import { expect } from 'chai';
 
 import { ArachnidBot, Point } from '../arachnid-bot';
 
-describe("Arachnid Bot",()=>{
+describe("Arachnid Bot: Mk 1",()=>{
     it("when instantiated is not null", ()=>{
         const bot = new ArachnidBot();
         expect(bot).to.not.be.null;
@@ -39,4 +39,4 @@ describe("Arachnid Bot",()=>{
 
         expect(actual).to.deep.equal(expected);
     });
-})
+});
